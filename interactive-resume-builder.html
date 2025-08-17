@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Interactive Resume Builder</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <div class="section-header">
+                <h2>Build Your Resume</h2>
+            </div>
+            <div class="form-content">
+                <form id="resumeForm">
+                    <!-- Personal Information -->
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profileSummary">Profile Summary</label>
+                        <textarea id="profileSummary" placeholder="Brief description about yourself..."></textarea>
+                    </div>
+
+                    <!-- Skills Section -->
+                    <div class="form-group">
+                        <label for="skillInput">Skills</label>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                            <select id="skillSelect" style="flex: 1;">
+                                <option value="">Select a skill...</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="Python">Python</option>
+                                <option value="Java">Java</option>
+                                <option value="C++">C++</option>
+                                <option value="HTML/CSS">HTML/CSS</option>
+                                <option value="React">React</option>
+                                <option value="Node.js">Node.js</option>
+                                <option value="Angular">Angular</option>
+                                <option value="Vue.js">Vue.js</option>
+                                <option value="PHP">PHP</option>
+                                <option value="SQL">SQL</option>
+                                <option value="MongoDB">MongoDB</option>
+                                <option value="Git">Git</option>
+                                <option value="Docker">Docker</option>
+                                <option value="AWS">AWS</option>
+                                <option value="Azure">Azure</option>
+                                <option value="Google Cloud">Google Cloud</option>
+                                <option value="Machine Learning">Machine Learning</option>
+                                <option value="Data Analysis">Data Analysis</option>
+                                <option value="Project Management">Project Management</option>
+                                <option value="Agile/Scrum">Agile/Scrum</option>
+                                <option value="Leadership">Leadership</option>
+                                <option value="Communication">Communication</option>
+                                <option value="Problem Solving">Problem Solving</option>
+                                <option value="Team Collaboration">Team Collaboration</option>
+                                <option value="Adobe Photoshop">Adobe Photoshop</option>
+                                <option value="Adobe Illustrator">Adobe Illustrator</option>
+                                <option value="Figma">Figma</option>
+                                <option value="UI/UX Design">UI/UX Design</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="SEO">SEO</option>
+                                <option value="Content Writing">Content Writing</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Customer Service">Customer Service</option>
+                                <option value="Microsoft Office">Microsoft Office</option>
+                                <option value="Excel">Excel</option>
+                                <option value="PowerPoint">PowerPoint</option>
+                            </select>
+                            <button type="button" class="btn" onclick="addSkillFromSelect()" style="white-space: nowrap;">Add Skill</button>
+                        </div>
+                        <input type="text" id="skillInput" placeholder="Or type a custom skill and press Enter">
+                        <div class="skills-container" id="skillsContainer"></div>
+                        <div class="skills-preview" id="skillsPreview" style="margin-top: 1rem; padding: 1rem; background: #f8f9ff; border-radius: 8px; border-left: 4px solid #667eea;">
+                            <strong>Skills Preview:</strong>
+                            <div id="previewSkillsList" style="margin-top: 0.5rem; color: #666;">
+                                No skills added yet. Add skills to see them here.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Section -->
+                    <div class="form-group">
+                        <label>Education</label>
+                        <div class="dynamic-section" id="educationSection">
+                            <div class="dynamic-item" data-index="0">
+                                <input type="text" placeholder="Degree/Qualification" class="education-degree">
+                                <input type="text" placeholder="Institution" class="education-institution">
+                                <input type="text" placeholder="Year" class="education-year">
+                                <button type="button" class="btn btn-secondary" onclick="removeEducation(0)">Remove</button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn" onclick="addEducation()">Add Education</button>
+                    </div>
+
+                    <!-- Experience Section -->
+                    <div class="form-group">
+                        <label>Experience</label>
+                        <div class="dynamic-section" id="experienceSection">
+                            <div class="dynamic-item" data-index="0">
+                                <input type="text" placeholder="Job Title" class="experience-title">
+                                <input type="text" placeholder="Company" class="experience-company">
+                                <input type="text" placeholder="Duration" class="experience-duration">
+                                <textarea placeholder="Job Description" class="experience-description"></textarea>
+                                <button type="button" class="btn btn-secondary" onclick="removeExperience(0)">Remove</button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn" onclick="addExperience()">Add Experience</button>
+                    </div>
+                </form>
+
+                <div class="controls">
+                    <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+                    <button type="button" class="btn btn-success" onclick="downloadPDF()">Download PDF</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="preview-section">
+            <div class="section-header">
+                <h2>Resume Preview</h2>
+            </div>
+            <div class="resume-preview" id="resumePreview">
+                <div class="empty-state">
+                    Fill out the form to see your resume preview here...
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
