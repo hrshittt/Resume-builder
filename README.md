@@ -38,7 +38,7 @@ You can run this application by simply opening the HTML file in a web browser, o
 ### Live Demo
 
 You can try the live version hosted on GitHub Pages:
-**[View Live Demo](https://hrshittt.github.io/Resume/)**
+**[View Live Demo](https://hrshittt.github.io/Resume-builder/)**
 
 
 ## 🤝 Contributing
