@@ -2,7 +2,7 @@
 
 A straightforward, user-friendly web application designed to help users quickly build and download a professional resume in PDF format. This project prioritizes simplicity and an intuitive user experience, covering all essential resume sections from contact details to experience.
 ---
-## 🌟 Features
+## Features
 
 * **Intuitive Form Interface:** Clear and easy-to-use form to input all personal and professional data.
 * **Dynamic Sections:** Easily **add and remove** multiple entries for **Education** and **Experience**.
@@ -11,7 +11,7 @@ A straightforward, user-friendly web application designed to help users quickly 
 * **PDF Generation:** Instantly **Download** the completed resume as a professional PDF file.
 * **Form Control:** **Clear Form** option to reset all fields and start fresh.
 ---
-## 🛠️ Tech Stack
+## Tech Stack
 This project is built using fundamental web technologies for a fast and reliable client-side experience.
 
 * **HTML:** For the main structure and form layout.
@@ -20,7 +20,7 @@ This project is built using fundamental web technologies for a fast and reliable
 * **PDF Library:** *(Replace this with the actual library you used, e.g., `jsPDF`, `html2canvas`, etc.)*
 
 ---
-## 🚀 Getting Started
+## Getting Started
 You can run this application by simply opening the HTML file in a web browser, or by visiting the live deployment.
 
 ### Viewing the Project
@@ -41,7 +41,7 @@ You can try the live version hosted on GitHub Pages:
 **[View Live Demo](https://hrshittt.github.io/Resume-builder/)**
 
 
-## 🤝 Contributing
+## Contributing
 
 We welcome suggestions and improvements! Feel free to fork the repository and submit a Pull Request.
 
@@ -53,7 +53,7 @@ We welcome suggestions and improvements! Feel free to fork the repository and su
 
 ---
 
-## 📞 Contact
+## Contact
 
 **HarshitGoyal** - [harshitgoyal2410@gmail.com]
 
