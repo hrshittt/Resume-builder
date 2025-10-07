@@ -40,17 +40,6 @@ You can run this application by simply opening the HTML file in a web browser, o
 You can try the live version hosted on GitHub Pages:
 **[View Live Demo](https://hrshittt.github.io/Resume/)**
 
----
-
-## 📸 Screenshots
-
-*(You can link the images you provided here to make the README more visually engaging)*
-
-| Build Your Resume (Personal Details & Skills) | Education & Experience Sections | Final Controls & Preview |
-| :---: | :---: | :---: |
-| [Screenshot 1](link-to-your-image-1000083754.jpg) | [Screenshot 2](link-to-your-image-1000083755.jpg) | [Screenshot 3](link-to-your-image-1000083756.jpg) |
-
----
 
 ## 🤝 Contributing
 
